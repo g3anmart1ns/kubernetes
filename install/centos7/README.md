@@ -48,7 +48,7 @@ systemctl disable firewalld --now
 
 {
 
-cat >>/etc/modules-load.d/crio.conf<<EOF
+cat >> /etc/modules-load.d/crio.conf << EOF
 overlay
 br_netfilter
 EOF
