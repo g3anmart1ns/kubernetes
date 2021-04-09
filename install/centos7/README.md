@@ -160,3 +160,13 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 <pre>
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 </pre>
+
+<pre>
+kubectl get pod --all-namespaces -o wide
+</pre>
+
+## Nos Workers
+<pre>
+kubeadm join 192.0.2.10:6443 --token 7ypt0c.xa6in8n4y3ftifkl \
+    --discovery-token-ca-cert-hash sha256:651bbca2c74f376d8940799225c731717f7e41000dea765661da0dc293b9004b
+</pre>
