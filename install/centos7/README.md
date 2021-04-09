@@ -116,3 +116,21 @@ yum repolist -y
 OS=CentOS_7
 VERSION=1.20
 </pre>
+
+<pre>
+{
+
+curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable.repo https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/devel:kubic:libcontainers:stable.repo
+curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.repo https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable:cri-o:$VERSION/$OS/devel:kubic:libcontainers:stable:cri-o:$VERSION.repo
+
+}
+</pre>
+
+<pre>
+yum install cri-o -y
+</pre>
+
+<pre>
+yum install kubelet-1.20.0-0 kubeadm-1.20.0-0 kubectl-1.20.0-0 --disableexcludes=kubernetes
+</pre>
+
