@@ -134,3 +134,13 @@ yum install cri-o -y
 yum install kubelet-1.20.0-0 kubeadm-1.20.0-0 kubectl-1.20.0-0 --disableexcludes=kubernetes
 </pre>
 
+<pre>
+sed -i 's/^conmon_cgroup = "system.slice"$/conmon_cgroup = "pod"/' /etc/crio/crio.conf
+sed -i 's/^cgroup_manager = "systemd"$/cgroup_manager = "cgroupfs"/' /etc/crio/crio.conf
+</pre>
+
+<pre>
+systemctl daemon-reload
+systemctl enable crio --now
+systemctl enable kubelet --now
+</pre>
