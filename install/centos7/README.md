@@ -148,3 +148,11 @@ systemctl enable kubelet --now
 <pre>
 kubeadm init --apiserver-advertise-address=192.0.2.10 --pod-network-cidr=192.168.0.0/16
 </pre>
+
+<pre>
+mkdir -p $HOME/.kube
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
+export KUBECONFIG=/etc/kubernetes/admin.conf
+</pre>
+
