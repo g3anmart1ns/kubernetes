@@ -144,3 +144,7 @@ systemctl daemon-reload
 systemctl enable crio --now
 systemctl enable kubelet --now
 </pre>
+
+<pre>
+kubeadm init --apiserver-advertise-address=192.0.2.10 --pod-network-cidr=192.168.0.0/16
+</pre>
