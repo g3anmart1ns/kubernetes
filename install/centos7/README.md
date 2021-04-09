@@ -145,6 +145,7 @@ systemctl enable crio --now
 systemctl enable kubelet --now
 </pre>
 
+## No Master
 <pre>
 kubeadm init --apiserver-advertise-address=192.0.2.10 --pod-network-cidr=192.168.0.0/16
 </pre>
@@ -156,3 +157,6 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=/etc/kubernetes/admin.conf
 </pre>
 
+<pre>
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+</pre>
