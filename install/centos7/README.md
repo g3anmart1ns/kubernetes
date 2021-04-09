@@ -60,6 +60,11 @@ modprobe br_netfilter
 </pre>
 
 <pre>
+lsmod | grep br_netfilter
+lsmod | grep overlay
+</pre>
+
+<pre>
 {
 
 cat >> /etc/sysctl.d/kubernetes.conf << EOF
@@ -72,11 +77,6 @@ sysctl --system
 
 }
 
-</pre>
-
-<pre>
-lsmod | grep br_netfilter
-lsmod | grep overlay
 </pre>
 
 <pre>
