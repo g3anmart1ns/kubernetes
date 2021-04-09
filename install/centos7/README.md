@@ -96,3 +96,23 @@ EOF
 
 }
 </pre>
+
+<pre>
+setenforce 0
+sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+</pre>
+
+<pre>
+swapoff -a
+cp -f /etc/fstab /etc/fstab.bak
+sed -i '/swap/d' /etc/fstab
+</pre>
+
+<pre>
+yum repolist -y
+</pre>
+
+<pre>
+OS=CentOS_7
+VERSION=1.20
+</pre>
